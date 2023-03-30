@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cats</title>
+		<script src="./api.js" defer></script>
+		<script src="./components/cart.js"></script>
+		<script src="./index.js" defer></script>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div id="homepage">
+			<div class="content"></div>
+			<div class="create-edit-modal-form">
+				<form action="">
+					<label for="id" required>Id</label>
+					<input id="id" placeholder="Id" required />
+					<input id="name" placeholder="Имя" required />
+					<input id="image" placeholder="Ссылка на изображение" required />
+					<input id="age" type="number" placeholder="Возраст" required />
+					<input id="rate" type="number" placeholder="Рейтинг" required />
+					<textarea id="description" rows="3" placeholder="Описание" required></textarea>
+					<button type="submit">Ok</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
