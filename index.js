@@ -8,7 +8,7 @@ const refreshCatsAndContent = () => {
 	api.getAllCats().then((res) => {
 		console.log(res);
 		const cards = res.reduce((acc, el) => (acc += generateCard(el)), '');
-		content.insertAdjacentHTML('afterbegin', cards); //загуглите insertAdjacentHTML afterbegin
+		content.insertAdjacentHTML('afterbegin', cards); 
 	});
 };
 
@@ -20,7 +20,6 @@ document
 		console.log(event.target);
 		if (event.target.tagName === 'BUTTON') {
 			console.log(event.target.className);
-			// переписать на switch
 			if (event.target.className === 'cat-card-view') {
 			} else if (event.target.className === 'cat-card-update') {
 			} else if (event.target.className === 'cat-card-delete') {
@@ -40,8 +39,7 @@ document.forms[0].addEventListener('submit', (event) => {
 	console.log(formData);
 	console.log(body);
 
-    // api.addCat() с использованием getNewIdOfCat
-    // api.updateCat() с использованием getNewIdOfCat
+    
 });
 
 const getNewIdOfCat = () => {

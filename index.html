@@ -7,12 +7,22 @@
 		<title>Cats</title>
 		<script src="./api.js" defer></script>
     <script src="./api2.js" defer></script>
-		<script src="./components/cart.js" defer></script>
+		<script src="./cart.js" defer></script>
 		<script src="./index.js" defer></script>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<div id="homepage">
+    <header class="header">
+      <div class="header-panel">
+        <img src="./img/logo.png" alt="Логотип" class="logo">
+        <div class="header-btns">
+          <button type="button" class="add">Добавить</button>
+          <button type="button" class="update">Изменить</button>
+  
+        </div>
+      </div>
+    </header>
+		<div class="homepage">
 			<div class="content"></div>
 			<div class="create-edit-modal-form">
 				<form action="">
@@ -27,5 +37,10 @@
 				</form>
 			</div>
 		</div>
+    <footer class="footer-container">
+      <div class="footer-copyright">
+      <p class="privacy">Ryazan 2023</p>
+      </div>
+    </footer>
 	</body>
 </html>
