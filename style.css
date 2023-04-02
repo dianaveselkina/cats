@@ -23,7 +23,7 @@
   height: 70px;
 }
 
-.add {
+.add-btn {
   width: 100px;
   height: 40px;
   border: 1px solid rgb(195, 209, 195);
@@ -39,7 +39,131 @@
   box-shadow: 2px 1px 1px rgb(33, 34, 33);
   
 }
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+h3 {
+  margin: 0;
+}
+
+.card {
+  background-color: silver;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  border-radius: 8px;
+  background-image: url("https://images11.graziamagazine.ru/upload/img_cache/ad9/ad99521f39944fdfd03bde3737b531c1_cropped_666x666.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.default {
+  background-image: url(img/cat_null.png);
+  background-size: contain;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #dedede90;
+}
+.card>* {
+  position: relative;
+}
+.card__like {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: crimson;
+  cursor: pointer;
+}
+.card h3 {
+  margin-bottom: 5px;
+}
+.empty {
+  background-color: aqua;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 calc(50% - 300px);
+}
+
 .homepage {
+  position: fixed;
+  background-color: #0008;
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.content {
+  background-color: bisque;
+  padding: 30px;
+  border-radius: 8px;
+  width: calc(100% - 60px);
+  max-width: 300px;
+  max-height: calc(100% - 60px);
+  position: relative;
+}
+.content h2 {
+  margin-top: 0;
+}
+.homepage-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.homepage-close:hover {
+  color: coral
+}
+.content form {
+  display: grid;
+  gap: 10px;
+}
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid darkgray;
+  background-color: transparent;
+}
+nav {
+  position: fixed;
+  box-sizing: border-box;
+  height: 100%;
+  right: 0;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  align-content: center;
+}
+.control>i {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.control>i:hover {
+  color: silver;
+}
+/* .homepage {
   width: 100%;
   height: 100%;
   background-color: rgb(235 235 235)
@@ -93,7 +217,7 @@
 
 .active {
   display: block;
-}
+} */
 
 .footer-container{
   width: 100%;

@@ -1,53 +1,44 @@
-const homepage = document.getElementById('homepage');
-console.log(homepage);
-
-const refreshCatsAndContent = () => {
-	const content = document.getElementsByClassName('content')[0];
-	content.innerHTML = '';
-
-	api.getAllCats().then((res) => {
-		console.log(res);
-		const cards = res.reduce((acc, el) => (acc += generateCard(el)), '');
-		content.insertAdjacentHTML('afterbegin', cards); 
-	});
-};
-
-refreshCatsAndContent();
-
-document
-	.getElementsByClassName('content')[0]
-	.addEventListener('click', (event) => {
-		console.log(event.target);
-		if (event.target.tagName === 'BUTTON') {
-			console.log(event.target.className);
-			if (event.target.className === 'cat-card-view') {
-			} else if (event.target.className === 'cat-card-update') {
-			} else if (event.target.className === 'cat-card-delete') {
-				api.deleteCat(event.target.value).then((res) => {
-					console.log(res);
-					refreshCatsAndContent();
-				});
-			}
-		}
-	});
-
-document.forms[0].addEventListener('submit', (event) => {
-	event.preventDefault();
-	console.log(event.target);
-	const formData = new FormData(event.target);
-	const body = Object.fromEntries(formData.entries());
-	console.log(formData);
-	console.log(body);
-
-    
+addBtn.addEventListener("click", e => {
+  mdBox.style.display = "flex";
+});
+mdClose.addEventListener("click", e => {
+  mdBox.style = null;
 });
 
-const getNewIdOfCat = () => {
-	return api.getIdsOfCat().then((res) => {
-		return Math.max(...res) + 1;
-	});
-};
-
-getNewIdOfCat().then((res) => {
-	console.log(res);
+addForm.addEventListener("submit", e => {
+  e.preventDefault();
+  const body = {};
+  
+  for (let i = 0; i < addForm.elements.length; i++) {
+      const inp = addForm.elements[i];
+            if (inp.name) { 
+          if (inp.type === "checkbox") {
+              body[inp.name] = inp.checked;
+          } else {
+              body[inp.name] = inp.value;
+          }
+      }
+  }
+  fetch(path + "/add", {
+      method: "post",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+  })
+  .then(res => {
+      if (res.ok) {
+          addForm.reset();
+          mdBox.style = null;
+          createCard(body);
+      } else {
+          return res.json();
+      }
+  })
+  // .then(err => {
+  //     if (err && err.message) {
+  //         alert(err.message);
+  //     }
+  // });
 });
+
