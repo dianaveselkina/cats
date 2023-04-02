@@ -1,6 +1,22 @@
 function createCard(cat, el = box) {
   const card = document.createElement("div");
   card.className = "card";
+
+  const button1 = document.createElement("BUTTON");
+  button1.className="look"
+  button1.innerHTML="Посмотреть"
+  card.append(button1)
+
+  const button2 = document.createElement("BUTTON");
+  button2.className="change"
+  button2.innerHTML="Изменить"
+  card.append(button2)
+
+  const button3 = document.createElement("BUTTON");
+  button3.className="delete"
+  button3.innerHTML="Удалить"
+  card.append(button3)
+
   if (!cat.image) {
       card.classList.add("default");
   } else {
