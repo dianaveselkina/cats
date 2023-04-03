@@ -1,21 +1,46 @@
 function createCard(cat, el = box) {
   const card = document.createElement("div");
   card.className = "card";
+  
+  const btn = document.createElement("div");
+  btn.className="btn-card"
 
+  
   const button1 = document.createElement("BUTTON");
   button1.className="look"
   button1.innerHTML="Посмотреть"
-  card.append(button1)
+  btn.append(button1)
 
   const button2 = document.createElement("BUTTON");
   button2.className="change"
   button2.innerHTML="Изменить"
-  card.append(button2)
+  btn.append(button2)
 
   const button3 = document.createElement("BUTTON");
   button3.className="delete"
   button3.innerHTML="Удалить"
-  card.append(button3)
+  btn.append(button3)
+
+  card.append(btn)
+  button1.onclick = (function(i){
+  return  alert(1111)} );
+  button2.onclick = (function(i){
+  return  alert(222)} );
+
+  button3.onclick = function deleteCard() {
+    
+        fetch(`${path}/delete/${cat.id}`, {
+            method: "delete"
+        })
+            .then(res => {
+                  if (res.status === 200) {
+                  el.remove();
+                }
+            })
+    
+}
+
+  
 
   if (!cat.image) {
       card.classList.add("default");
@@ -46,11 +71,7 @@ function createCard(cat, el = box) {
       }
   })
   card.append(like, name);
-    if (cat.age >= 0) {
-        const age = document.createElement("span");
-        age.innerText = cat.age;
-        card.append(age);
-    }
+    
     // card.addEventListener("click", (e) => {
     //     deleteCard(cat.id, card);
     // });

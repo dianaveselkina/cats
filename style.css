@@ -8,7 +8,7 @@
   position: sticky;
 }
 .header-panel {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,6 +17,7 @@
   margin-left: auto;
 }
 .logo {
+  padding-left: 30px;
   width: 100px;
   height: 70px;
 }
@@ -26,6 +27,9 @@
   border: 1px solid rgb(195, 209, 195);
   border-radius: 10px;
   box-shadow: 2px 1px 1px rgb(33, 34, 33);
+}
+.add-btn:hover { 
+  background: rgb(147, 161, 147); 
 }
 .update {
   width: 100px;
@@ -40,10 +44,20 @@ body {
 }
 h3 {
   margin: 0;
+  display: block;
+  top: 86px;
+  font-size: 30px;
+  color: rgb(142, 155, 142);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color:  rgb(142, 155, 142);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 .container {
-  background-color: rgb(243, 239, 238);
-  min-height: 100vh;
+  background-color: rgb(217, 231, 217);
+  height: 50%;
   padding: 30px;
   box-sizing: border-box;
   display: grid;
@@ -52,16 +66,16 @@ h3 {
   gap: 30px;
 }
 .look, .change, .delete{
-  
     height: 20px;
-    width: 90px;
+    width: 83px;
     border-radius: 3px;
+    border: 1px solid rgb(195, 209, 195);
 }
 .card {
   background-color: silver;
-  padding: 120px;
   text-align: center;
   position: relative;
+  height: 350px;
   border-radius: 8px;
   background-image: url("https://images11.graziamagazine.ru/upload/img_cache/ad9/ad99521f39944fdfd03bde3737b531c1_cropped_666x666.webp");
   background-repeat: no-repeat;
@@ -71,6 +85,21 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.btn-card{
+  background-color: aliceblue;
+  position: absolute;
+  top: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 20px;
+  width: 270px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.look:hover, .change:hover, .delete:hover { 
+  background: rgb(147, 161, 147); 
 }
 .default {
   background-image: url(img/cat_null.png);
@@ -153,6 +182,7 @@ input, textarea {
   background-color: transparent;
 }
 .control{
+  padding-right: 30px;
   display: flex;
   gap: 20px;
 }
