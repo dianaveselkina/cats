@@ -22,10 +22,34 @@ function createCard(cat, el = box) {
   btn.append(button3)
 
   card.append(btn)
-  button1.onclick = (function(i){
-  return  alert(1111)} );
-  button2.onclick = (function(i){
-  return  alert(222)} );
+
+  button1.onclick = function getCat() {
+    fetch(`${path}/show/${cat.id}`, {
+              method: "GET",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+            })
+            .then(function(res) {
+              
+              console.log(res.json());
+          })
+      }
+  
+        
+
+  button2.onclick = function updateCat() {
+    fetch(`${path}/update/${cat.id}`, {
+              method: "PUT",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+            })
+            .then(function(res) {
+              
+              console.log("<<<<<<"+res.json());
+          })
+      }
 
   button3.onclick = function deleteCard() {
     
@@ -72,9 +96,7 @@ function createCard(cat, el = box) {
   })
   card.append(like, name);
     
-    // card.addEventListener("click", (e) => {
-    //     deleteCard(cat.id, card);
-    // });
+    
     el.append(card);
 }
 
