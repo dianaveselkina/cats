@@ -31,9 +31,11 @@ function createCard(cat, el = box) {
               },
             })
             .then(function(res) {
+              mdBoxLook.style.display = "flex";
+              mdBoxLookContent.append(generateCardView);
               
-              console.log(res.json());
           })
+          console.log(event.target.value);
       }
   
         
@@ -46,8 +48,8 @@ function createCard(cat, el = box) {
               },
             })
             .then(function(res) {
-              
-              console.log("<<<<<<"+res.json());
+              mdBoxUpdate.style.display = "flex";
+              console.log(res.json());
           })
       }
 

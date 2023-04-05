@@ -148,6 +148,16 @@ h3 {
   align-items: center;
   display: none;
 }
+.homepage-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.homepage-close:hover {
+  color: rgb(157, 172, 157)
+}
 .content {
   background-color: rgb(255, 253, 250);
   padding: 30px;
@@ -160,16 +170,75 @@ h3 {
 .content h2 {
   margin-top: 0;
 }
-.homepage-close {
+.cardView-popup{
+  background-color: blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; 
+}
+.content-cardView-popup{
+  background-color: rgb(255, 253, 250);
+  padding: 30px;
+  border-radius: 8px;
+  width: calc(100% - 60px);
+  max-width: 300px;
+  max-height: calc(100% - 60px);
+  position: relative; 
+}
+.cardView-popup-close{
   position: absolute;
   right: 10px;
   top: 10px;
   font-size: 1.4rem;
-  cursor: pointer;
+  cursor: pointer; 
 }
-.homepage-close:hover {
+.cardView-popup-close:hover {
   color: rgb(157, 172, 157)
 }
+
+
+.cardUpdate-popup{
+  background-color: rgb(0, 255, 64);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; 
+}
+.content-cardUpdate-popup{
+  background-color: rgb(255, 253, 250);
+  padding: 30px;
+  border-radius: 8px;
+  width: calc(100% - 60px);
+  max-width: 300px;
+  max-height: calc(100% - 60px);
+  position: relative; 
+}
+.cardUpdate-popup-close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.4rem;
+  cursor: pointer; 
+}
+.cardUpdate-popup-close:hover {
+  color: rgb(157, 172, 157)
+}
+
+
+
+
+
 .content form {
   display: grid;
   gap: 10px;

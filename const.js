@@ -3,7 +3,34 @@ const addBtn = document.querySelector(".add-btn");
 const mdBox = document.querySelector(".homepage");
 const mdClose = mdBox.querySelector(".homepage-close");
 const addForm = document.forms.add;
+const mdBoxLook = document.querySelector(".cardView-popup");
+const mdLookClose = mdBoxLook.querySelector(".cardView-popup-close");
+const mdBoxLookContent = document.querySelector(".content-cardView-popup");
+const addFormGet = document.forms.get;
 
-
+const mdBoxUpdate = document.querySelector(".cardUpdate-popup");
+const mdUpdateClose = mdBoxUpdate.querySelector(".cardUpdate-popup-close");
+const mdBoxUpdateContent = document.querySelector(".content-cardUpdate-popup");
+const addFormUpdate = document.forms.update;
 
 const path = `https://cats.petiteweb.dev/api/single/dianaveselkina`;
+
+
+const generateCardView = (cat) => {
+  return `<div class='cardView-popup'>
+  <div class="cardView">
+  <div class="cardView-image">
+ 	<img src=${
+    cat.image !== '' ? cat.image : defaultLink
+  } alt="Картинка котика" /> 
+  </div>
+	<div class="cardView-content">
+		<div class="card-name">Имя: ${cat.name}</div>
+		<div class="card-description">Сообщение: ${cat.description}</div>
+		<div class="card-age">Возраст: ${cat.age}</div> 
+		<div class="card-rate">Рейтинг: ${cat.rate}</div> 
+		<button class="cardView-exit"></button>
+	</div>
+  </div>
+ </div>`;
+};

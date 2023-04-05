@@ -4,6 +4,13 @@ addBtn.addEventListener("click", e => {
 mdClose.addEventListener("click", e => {
   mdBox.style = null;
 });
+mdLookClose.addEventListener("click", e => {
+  mdBoxLook.style = null;
+});
+
+mdUpdateClose.addEventListener("click", e => {
+  mdBoxUpdate.style = null;
+});
 
 addForm.addEventListener("submit", e => {
   e.preventDefault();
