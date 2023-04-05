@@ -3,9 +3,11 @@ const addBtn = document.querySelector(".add-btn");
 const mdBox = document.querySelector(".homepage");
 const mdClose = mdBox.querySelector(".homepage-close");
 const addForm = document.forms.add;
+
 const mdBoxLook = document.querySelector(".cardView-popup");
 const mdLookClose = mdBoxLook.querySelector(".cardView-popup-close");
 const mdBoxLookContent = document.querySelector(".content-cardView-popup");
+const mdBoxLookInfo = document.querySelector(".cardView-popup-info");
 const addFormGet = document.forms.get;
 
 const mdBoxUpdate = document.querySelector(".cardUpdate-popup");
@@ -17,12 +19,12 @@ const path = `https://cats.petiteweb.dev/api/single/dianaveselkina`;
 
 
 const generateCardView = (cat) => {
-  return `<div class='cardView-popup'>
+  return `<div class='cardView-popup-info'>
   <div class="cardView">
   <div class="cardView-image">
  	<img src=${
     cat.image !== '' ? cat.image : defaultLink
-  } alt="Картинка котика" /> 
+  } alt="Картинка котика" width = "300px"/> 
   </div>
 	<div class="cardView-content">
 		<div class="card-name">Имя: ${cat.name}</div>

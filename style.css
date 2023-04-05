@@ -18,7 +18,7 @@
 }
 .logo {
   padding-left: 30px;
-  width: 100px;
+  width: 150px;
   height: 70px;
 }
 .add-btn {
@@ -37,6 +37,9 @@
   border: 1px solid rgb(195, 209, 195);
   border-radius: 10px;
   box-shadow: 2px 1px 1px rgb(33, 34, 33);
+}
+.update:hover {
+  background: rgb(147, 161, 147); 
 }
 body {
   margin: 0;
@@ -102,7 +105,7 @@ h3 {
   background: rgb(147, 161, 147); 
 }
 .default {
-  background-image: url(img/cat_null.png);
+  background-image: url(img/test.jpg);
   background-size: contain;
 }
 .card::before {
@@ -171,7 +174,7 @@ h3 {
   margin-top: 0;
 }
 .cardView-popup{
-  background-color: blue;
+  background-color: rgba(249, 249, 252, 0);
   position: fixed;
   top: 0;
   left: 0;
@@ -184,7 +187,7 @@ h3 {
 }
 .content-cardView-popup{
   background-color: rgb(255, 253, 250);
-  padding: 30px;
+  padding: 20px;
   border-radius: 8px;
   width: calc(100% - 60px);
   max-width: 300px;
@@ -204,7 +207,7 @@ h3 {
 
 
 .cardUpdate-popup{
-  background-color: rgb(0, 255, 64);
+  background-color: rgba(249, 249, 252, 0);
   position: fixed;
   top: 0;
   left: 0;
@@ -213,16 +216,16 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none; 
+  display: none;  
 }
 .content-cardUpdate-popup{
   background-color: rgb(255, 253, 250);
-  padding: 30px;
+  padding: 200px;
   border-radius: 8px;
   width: calc(100% - 60px);
   max-width: 300px;
   max-height: calc(100% - 60px);
-  position: relative; 
+  position: relative;  
 }
 .cardUpdate-popup-close{
   position: absolute;

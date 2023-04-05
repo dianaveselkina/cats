@@ -30,13 +30,14 @@ function createCard(cat, el = box) {
                   "Content-Type": "application/json"
               },
             })
-            .then(function(res) {
-              mdBoxLook.style.display = "flex";
-              mdBoxLookContent.append(generateCardView);
-              
-          })
-          console.log(event.target.value);
-      }
+            .then(res => 
+            res.json())
+            .then (res => {
+            mdBoxLookContent.insertAdjacentHTML('beforeend', generateCardView(res)) 
+            mdBoxLook.style.display = "flex"
+            
+            })
+            }
   
         
 
@@ -47,9 +48,11 @@ function createCard(cat, el = box) {
                   "Content-Type": "application/json"
               },
             })
-            .then(function(res) {
-              mdBoxUpdate.style.display = "flex";
-              console.log(res.json());
+            .then(res => 
+              res.json())
+              .then (res => {
+              mdBoxLookContent.insertAdjacentHTML('beforeend', generateCardView(res)) 
+              mdBoxUpdate.style.display = "flex"
           })
       }
 
