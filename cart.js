@@ -55,7 +55,6 @@ function createCard(cat, el = box) {
     }).then((res) => {
       if (res.status === 200) {
         el.remove();
-        localStorage.setItem('cats-data', JSON.stringify(cats));
       }
     });
   };
@@ -83,13 +82,6 @@ function createCard(cat, el = box) {
         if (res.status === 200) {
           like.classList.toggle('fa-solid');
           like.classList.toggle('fa-regular');
-          cats = cats.map((c) => {
-            if (c.id === cat.id) {
-              c.favorite = !cat.favorite;
-            }
-            return c;
-          });
-          localStorage.setItem('cats-data', JSON.stringify(cats));
         }
       });
     }
@@ -106,11 +98,27 @@ function deleteCard(id, el) {
     }).then((res) => {
       if (res.status === 200) {
         el.remove();
-        localStorage.setItem('cats-data', JSON.stringify(cats));
       }
     });
   }
 }
+
+fetch(path + '/show')
+  .then(function (res) {
+    console.log(res);
+    if (res.statusText === 'OK') {
+      return res.json();
+    }
+  })
+  .then(function (data) {
+    if (!data.length) {
+      box.innerHTML = '<div class="empty">Упс</div>';
+    } else {
+      for (let c of data) {
+        createCard(c, box);
+      }
+    }
+  });
 
 function addCat(cat) {
   fetch(path + '/add', {
@@ -123,39 +131,5 @@ function addCat(cat) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-    });
-}
-
-if (cats) {
-  try {
-    cats = JSON.parse(cats);
-    console.log(cats);
-    for (let cat of cats) {
-      createCard(cat, box);
-      console.log(cat);
-    }
-  } catch (err) {
-    if (err) {
-      cats = null;
-    }
-  }
-} else {
-  fetch(path + '/show')
-    .then(function (res) {
-      console.log(res);
-      if (res.statusText === 'OK') {
-        return res.json();
-      }
-    })
-    .then(function (data) {
-      if (!data.length) {
-        box.innerHTML = '<div class="empty">Упс</div>';
-      } else {
-        cats = [...data];
-        localStorage.setItem('cats-data', JSON.stringify(data));
-        for (let c of data) {
-          createCard(c, box);
-        }
-      }
     });
 }

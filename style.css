@@ -191,7 +191,7 @@ h3 {
 }
 .content-cardView-popup {
   background-color: rgb(255, 253, 250);
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
   width: calc(100% - 60px);
   max-width: 300px;

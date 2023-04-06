@@ -17,8 +17,6 @@ const addFormUpdate = document.forms.update;
 
 const path = `https://cats.petiteweb.dev/api/single/dianaveselkina`;
 
-let cats = localStorage.getItem('cats-data');
-
 const generateCardView = (cat) => {
   return `<div class='cardView-popup-info'>
   <div class="cardView">

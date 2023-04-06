@@ -26,7 +26,6 @@ addForm.addEventListener('submit', (e) => {
       }
     }
   }
-  console.log(body);
   fetch(path + '/add', {
     method: 'post',
     headers: {
@@ -39,8 +38,6 @@ addForm.addEventListener('submit', (e) => {
         addForm.reset();
         mdBox.style = null;
         createCard(body);
-        cats.push(body);
-        localStorage.setItem('cats-data', JSON.stringify(cats));
       } else {
         return res.json();
       }
