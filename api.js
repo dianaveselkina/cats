@@ -1,74 +1,68 @@
 const config = {
-	baseUrl: 'https://cats.petiteweb.dev/api/single/dianaveselkina/',
+  baseUrl: 'https://cats.petiteweb.dev/api/single/dianaveselkina/',
 };
 
 class Api {
-	constructor(config) {
-		this.baseUrl = config.baseUrl;
-	}
+  constructor(config) {
+    this.baseUrl = config.baseUrl;
+  }
 
-	getAllCats = () => {
-		return fetch(`${this.baseUrl}show`).then((res) => {
-			return res.ok ? res.json() : Promise.reject('я не кот');
-		});
-	};
+  getAllCats = () => {
+    return fetch(`${this.baseUrl}show`).then((res) => {
+      return res.ok ? res.json() : Promise.reject('я не кот');
+    });
+  };
 
-	addCat = (cat) => {
-		return fetch(`${this.baseUrl}add`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(cat),
-		}).then((res) => {
-			return res.ok ? res.json() : Promise.reject('я не кот');
-		});
-	};
+  addCat = (cat) => {
+    return fetch(`${this.baseUrl}add`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cat),
+    }).then((res) => {
+      return res.ok ? res.json() : Promise.reject('я не кот');
+    });
+  };
 
-	updateCat = (newCat) => {
-		return fetch(`${this.baseUrl}update/${newCat.id}`, {
-			method: 'PUT',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(newCat),
-		}).then((res) => {
-			return res.ok ? res.json() : Promise.reject('Я не кот');
-		});
-	};
+  updateCat = (newCat) => {
+    return fetch(`${this.baseUrl}update/${newCat.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newCat),
+    }).then((res) => {
+      return res.ok ? res.json() : Promise.reject('Я не кот');
+    });
+  };
 }
 
 getAllCatsIds = () => {
-    return fetch(`${this.baseUrl}ids`).then((res) => {
+  return fetch(`${this.baseUrl}ids`).then((res) => {
     return res.ok ? res.json() : Promise.reject(res.json());
   });
 };
 
-
 getCat = (catId) => {
-    return fetch(`${this.baseUrl}show/${catId}`).then((res) => {
+  return fetch(`${this.baseUrl}show/${catId}`).then((res) => {
     return res.ok ? res.json() : Promise.reject('я не кот');
   });
 };
 
-
 deleteCat = (id) => {
   return fetch(`${this.baseUrl}update/${id}`, {
     method: 'DELETE',
-    }).then((res) => {
+  }).then((res) => {
     return res.ok ? res.json() : Promise.reject('я не кот');
   });
 };
 
 let api = new Api({
-	baseUrl: 'https://cats.petiteweb.dev/api/single/dianaveselkina/',
+  baseUrl: 'https://cats.petiteweb.dev/api/single/dianaveselkina/',
 });
 
 // export default api;
-
-
-
-
 
 // api
 // 	.getAllCats()
@@ -141,5 +135,3 @@ let api = new Api({
 //    .catch((error) => {
 //      console.log(error);
 //    });
- 
-

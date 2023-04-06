@@ -1,9 +1,8 @@
-
 .header {
   height: 70px;
   width: 100%;
   margin-bottom: 30px;
-  background-color:  rgb(195, 209, 195);
+  background-color: rgb(195, 209, 195);
   display: flex;
   position: sticky;
 }
@@ -28,8 +27,8 @@
   border-radius: 10px;
   box-shadow: 2px 1px 1px rgb(33, 34, 33);
 }
-.add-btn:hover { 
-  background: rgb(147, 161, 147); 
+.add-btn:hover {
+  background: rgb(147, 161, 147);
 }
 .update {
   width: 100px;
@@ -39,7 +38,7 @@
   box-shadow: 2px 1px 1px rgb(33, 34, 33);
 }
 .update:hover {
-  background: rgb(147, 161, 147); 
+  background: rgb(147, 161, 147);
 }
 body {
   margin: 0;
@@ -51,7 +50,8 @@ h3 {
   top: 86px;
   font-size: 30px;
   color: rgb(142, 155, 142);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color:  rgb(142, 155, 142);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: rgb(142, 155, 142);
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
@@ -68,11 +68,13 @@ h3 {
   align-content: flex-start;
   gap: 30px;
 }
-.look, .change, .delete{
-    height: 20px;
-    width: 83px;
-    border-radius: 3px;
-    border: 1px solid rgb(195, 209, 195);
+.look,
+.change,
+.delete {
+  height: 20px;
+  width: 83px;
+  border-radius: 3px;
+  border: 1px solid rgb(195, 209, 195);
 }
 .card {
   background-color: silver;
@@ -80,7 +82,7 @@ h3 {
   position: relative;
   height: 350px;
   border-radius: 8px;
-  background-image: url("https://images11.graziamagazine.ru/upload/img_cache/ad9/ad99521f39944fdfd03bde3737b531c1_cropped_666x666.webp");
+  background-image: url('https://images11.graziamagazine.ru/upload/img_cache/ad9/ad99521f39944fdfd03bde3737b531c1_cropped_666x666.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -89,7 +91,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
 }
-.btn-card{
+.btn-card {
   background-color: aliceblue;
   position: absolute;
   top: 200px;
@@ -101,11 +103,13 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 3px;
 }
-.look:hover, .change:hover, .delete:hover { 
-  background: rgb(147, 161, 147); 
+.look:hover,
+.change:hover,
+.delete:hover {
+  background: rgb(147, 161, 147);
 }
 .default {
-  background-image: url(img/test.jpg);
+  background-image: url(img/cat_null.png);
   background-size: contain;
 }
 .card::before {
@@ -116,7 +120,7 @@ h3 {
   left: 0;
   background-color: #dedede90;
 }
-.card>* {
+.card > * {
   position: relative;
 }
 .card__like {
@@ -159,7 +163,7 @@ h3 {
   cursor: pointer;
 }
 .homepage-close:hover {
-  color: rgb(157, 172, 157)
+  color: rgb(157, 172, 157);
 }
 .content {
   background-color: rgb(255, 253, 250);
@@ -173,7 +177,7 @@ h3 {
 .content h2 {
   margin-top: 0;
 }
-.cardView-popup{
+.cardView-popup {
   background-color: rgba(249, 249, 252, 0);
   position: fixed;
   top: 0;
@@ -183,30 +187,29 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none; 
+  display: none;
 }
-.content-cardView-popup{
+.content-cardView-popup {
   background-color: rgb(255, 253, 250);
   padding: 20px;
   border-radius: 8px;
   width: calc(100% - 60px);
   max-width: 300px;
   max-height: calc(100% - 60px);
-  position: relative; 
+  position: relative;
 }
-.cardView-popup-close{
+.cardView-popup-close {
   position: absolute;
   right: 10px;
   top: 10px;
   font-size: 1.4rem;
-  cursor: pointer; 
+  cursor: pointer;
 }
 .cardView-popup-close:hover {
-  color: rgb(157, 172, 157)
+  color: rgb(157, 172, 157);
 }
 
-
-.cardUpdate-popup{
+.cardUpdate-popup {
   background-color: rgba(249, 249, 252, 0);
   position: fixed;
   top: 0;
@@ -216,61 +219,58 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;  
+  display: none;
 }
-.content-cardUpdate-popup{
+.content-cardUpdate-popup {
   background-color: rgb(255, 253, 250);
-  padding: 200px;
+  padding: 50px;
   border-radius: 8px;
   width: calc(100% - 60px);
   max-width: 300px;
   max-height: calc(100% - 60px);
-  position: relative;  
+  position: relative;
 }
-.cardUpdate-popup-close{
+.cardUpdate-popup-close {
   position: absolute;
   right: 10px;
   top: 10px;
   font-size: 1.4rem;
-  cursor: pointer; 
+  cursor: pointer;
 }
 .cardUpdate-popup-close:hover {
-  color: rgb(157, 172, 157)
+  color: rgb(157, 172, 157);
 }
-
-
-
-
 
 .content form {
   display: grid;
   gap: 10px;
 }
-input, textarea {
+input,
+textarea {
   font-family: inherit;
   font-size: inherit;
   border: 1px solid darkgray;
   border-radius: 3px;
   background-color: transparent;
 }
-.control{
+.control {
   padding-right: 30px;
   display: flex;
   gap: 20px;
 }
-.control>i {
+.control > i {
   font-size: 1.4rem;
   cursor: pointer;
 }
-.control>i:hover {
+.control > i:hover {
   color: silver;
 }
-.footer-container{
+.footer-container {
   width: 100%;
   height: 70px;
-  background-color: rgb(195, 209, 195);;
+  background-color: rgb(195, 209, 195);
 }
-.footer-copyright{
+.footer-copyright {
   text-align: center;
   padding: 10px;
 }

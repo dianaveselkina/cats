@@ -1,60 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Cats</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="stylesheet" href="./style.css" />
-	</head>
-	<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cats</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <header class="header">
       <div class="header-panel">
-        <img src="./img/logo.png" alt="Логотип" class="logo">
+        <img src="./img/logo.png" alt="Логотип" class="logo" />
         <nav class="control">
           <button type="button" class="add-btn">Добавить котика</button>
-          <button type="button" onclick="location.reload(); return false;"class="update">Обновить страницу</button>
-      </nav>
+          <button
+            type="button"
+            onclick="location.reload(); return false;"
+            class="update"
+          >
+            Обновить страницу
+          </button>
+        </nav>
       </div>
     </header>
     <div class="container"></div>
-    	<div class="homepage">
-			<div class="content">
-      <i class="fa-regular fa-circle-xmark homepage-close"></i>
-      <h2>Добавить котика</h2>
-				<form id="add">
-          <input type="number" name="id" placeholder="id кота" required>
-          <input type="text" name="name" placeholder="Имя кота" required>
-          <input type="text" name="image" placeholder="Ссылка на изображение">
-          <input type="number" name="age" placeholder="Возраст кота">
-          <input type="number" name="rate" placeholder="Рейтинг кота" min="0" max="10"><label>
-          <input type="checkbox" name="favorite">Любимчик</label>
-          <textarea name="description" placeholder="Информация о коте"></textarea>
+    <div class="homepage">
+      <div class="content">
+        <i class="fa-regular fa-circle-xmark homepage-close"></i>
+        <h2>Добавить котика</h2>
+        <form id="add">
+          <input type="number" name="id" placeholder="id кота" required />
+          <input type="text" name="name" placeholder="Имя кота" required />
+          <input type="text" name="image" placeholder="Ссылка на изображение" />
+          <input type="number" name="age" placeholder="Возраст кота" />
+          <input
+            type="number"
+            name="rate"
+            placeholder="Рейтинг кота"
+            min="0"
+            max="10"
+          /><label> <input type="checkbox" name="favorite" />Любимчик</label>
+          <textarea
+            name="description"
+            placeholder="Информация о коте"
+          ></textarea>
           <button type="submit">Добавить</button>
-      </form>
-			 </div>
-		  </div>
-      <div class='cardView-popup'>
-        <div class="content-cardView-popup">
-          <i class="fa-regular fa-circle-xmark cardView-popup-close"></i>
-          <h2>Посмотреть котика</h2>
-          </div> 
+        </form>
       </div>
-      <div class='cardUpdate-popup'>
-        <div class="content-cardUpdate-popup">
-          <i class="fa-regular fa-circle-xmark cardUpdate-popup-close"></i>
-          <h2>Изменить котика</h2>
-          </div> 
+    </div>
+    <div class="cardView-popup">
+      <div class="content-cardView-popup">
+        <i class="fa-regular fa-circle-xmark cardView-popup-close"></i>
+        <h2>Посмотреть котика</h2>
       </div>
-      <footer class="footer-container">
+    </div>
+    <div class="cardUpdate-popup">
+      <div class="content-cardUpdate-popup">
+        <i class="fa-regular fa-circle-xmark cardUpdate-popup-close"></i>
+        <h2>Изменить котика</h2>
+        <p>Упс. Что-то пошло не так. Попробуйте позже.</p>
+      </div>
+    </div>
+    <footer class="footer-container">
       <div class="footer-copyright">
-      <p class="privacy">Ryazan 2023</p>
+        <p class="privacy">Ryazan 2023</p>
       </div>
     </footer>
     <script src="const.js"></script>
     <script src="cart.js"></script>
     <script src="script.js"></script>
-    
-	</body>
+  </body>
 </html>

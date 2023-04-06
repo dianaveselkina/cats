@@ -1,50 +1,50 @@
-addBtn.addEventListener("click", e => {
-  mdBox.style.display = "flex";
+addBtn.addEventListener('click', (e) => {
+  mdBox.style.display = 'flex';
 });
-mdClose.addEventListener("click", e => {
+mdClose.addEventListener('click', (e) => {
   mdBox.style = null;
 });
-mdLookClose.addEventListener("click", e => {
+mdLookClose.addEventListener('click', (e) => {
   mdBoxLook.style = null;
 });
 
-mdUpdateClose.addEventListener("click", e => {
+mdUpdateClose.addEventListener('click', (e) => {
   mdBoxUpdate.style = null;
 });
 
-addForm.addEventListener("submit", e => {
+addForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const body = {};
-  
+
   for (let i = 0; i < addForm.elements.length; i++) {
-      const inp = addForm.elements[i];
-            if (inp.name) { 
-          if (inp.type === "checkbox") {
-              body[inp.name] = inp.checked;
-          } else {
-              body[inp.name] = inp.value;
-          }
-      }
-  }
-  fetch(path + "/add", {
-      method: "post",
-      headers: {
-          "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-  })
-  .then(res => {
-      if (res.ok) {
-          addForm.reset();
-          mdBox.style = null;
-          createCard(body);
+    const inp = addForm.elements[i];
+    if (inp.name) {
+      if (inp.type === 'checkbox') {
+        body[inp.name] = inp.checked;
       } else {
-          return res.json();
+        body[inp.name] = inp.value;
       }
+    }
+  }
+  fetch(path + '/add', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
   })
-  // .then(err => {
-  //     if (err && err.message) {
-  //         alert(err.message);
-  //     }
-  // });
+    .then((res) => {
+      if (res.ok) {
+        addForm.reset();
+        mdBox.style = null;
+        createCard(body);
+      } else {
+        return res.json();
+      }
+    })
+    .then((err) => {
+      if (err && err.message) {
+        alert(err.message);
+      }
+    });
 });
