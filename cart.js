@@ -55,6 +55,7 @@ function createCard(cat, el = box) {
     }).then((res) => {
       if (res.status === 200) {
         el.remove();
+        localStorage.setItem('cats-data', JSON.stringify(cats));
       }
     });
   };
@@ -105,29 +106,11 @@ function deleteCard(id, el) {
     }).then((res) => {
       if (res.status === 200) {
         el.remove();
-        cats = cats.filter((c) => c.id !== id);
         localStorage.setItem('cats-data', JSON.stringify(cats));
       }
     });
   }
 }
-
-fetch(path + '/show')
-  .then(function (res) {
-    console.log(res);
-    if (res.statusText === 'OK') {
-      return res.json();
-    }
-  })
-  .then(function (data) {
-    if (!data.length) {
-      box.innerHTML = '<div class="empty">У вас еще нет котов</div>';
-    } else {
-      for (let c of data) {
-        createCard(c, box);
-      }
-    }
-  });
 
 function addCat(cat) {
   fetch(path + '/add', {
@@ -166,7 +149,7 @@ if (cats) {
     })
     .then(function (data) {
       if (!data.length) {
-        box.innerHTML = '<div class="empty">У вас пока еще нет котов</div>';
+        box.innerHTML = '<div class="empty">Упс</div>';
       } else {
         cats = [...data];
         localStorage.setItem('cats-data', JSON.stringify(data));

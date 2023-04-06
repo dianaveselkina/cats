@@ -26,6 +26,7 @@ addForm.addEventListener('submit', (e) => {
       }
     }
   }
+  console.log(body);
   fetch(path + '/add', {
     method: 'post',
     headers: {
