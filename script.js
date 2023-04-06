@@ -38,6 +38,8 @@ addForm.addEventListener('submit', (e) => {
         addForm.reset();
         mdBox.style = null;
         createCard(body);
+        cats.push(body);
+        localStorage.setItem('cats-data', JSON.stringify(cats));
       } else {
         return res.json();
       }

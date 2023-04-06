@@ -17,12 +17,14 @@ const addFormUpdate = document.forms.update;
 
 const path = `https://cats.petiteweb.dev/api/single/dianaveselkina`;
 
+let cats = localStorage.getItem('cats-data');
+
 const generateCardView = (cat) => {
   return `<div class='cardView-popup-info'>
   <div class="cardView">
   <div class="cardView-image">
  	<img src=${
-    cat.image !== '' ? cat.image : defaultLink
+    cat.image !== '' ? cat.image : 'default'
   } alt="Картинка котика" width = "300px"/> 
   </div>
 	<div class="cardView-content">
